@@ -6,31 +6,103 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
   <article class="doc-content">
     <h1>Pricing & Commercial Model</h1>
 
-    <div class="status-banner">
-      <p>📋 <strong>Contact Sales</strong></p>
-      <p>
-        Pricing is determined per integration. <a href="mailto:sales@clearhold.io">Contact us</a> for
-        a quote.
-      </p>
-    </div>
+    <blockquote>
+      Clearhold is a B2B infrastructure product.<br />
+      We don't sell to freelancers. We partner with platforms.
+    </blockquote>
 
-    <h2>Model Overview</h2>
+    <h2>Pricing Philosophy</h2>
 
-    <p>Clearhold pricing is based on:</p>
+    <p>
+      Our pricing reflects what we actually provide: <strong>risk orchestration</strong>, not just
+      API calls.
+    </p>
 
     <ul>
-      <li><strong>Escrow volume</strong> — Number of escrows created per month</li>
-      <li><strong>Dispute rate</strong> — Percentage of escrows that enter dispute</li>
-      <li><strong>Support tier</strong> — Standard, priority, or dedicated</li>
+      <li>Volume grows → unit cost decreases</li>
+      <li>Disputes are premium actions → priced accordingly</li>
+      <li>No "unlimited" plans — we scale with you</li>
     </ul>
 
-    <h2>What's Included</h2>
+    <h2>Plans</h2>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Core</h3>
+        <p class="subtitle">Engine</p>
+        <div class="price">
+          <span class="amount">$99</span>
+          <span class="period">/month</span>
+        </div>
+        <ul class="features">
+          <li><strong>+0.5%</strong> of escrow volume</li>
+          <li><strong>$0.50</strong> per dispute evaluated</li>
+        </ul>
+        <div class="includes">
+          <p><strong>Includes:</strong></p>
+          <ul>
+            <li>Full escrow orchestration</li>
+            <li>Decision engine access</li>
+            <li>Audit logs</li>
+            <li>Best-effort support</li>
+          </ul>
+        </div>
+        <p class="target">For: Vertical SaaS, Agency platforms</p>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Scale</h3>
+        <p class="subtitle">Infra Partner</p>
+        <div class="price">
+          <span class="amount">$499</span>
+          <span class="period">/month</span>
+        </div>
+        <ul class="features">
+          <li><strong>+0.3%</strong> of escrow volume</li>
+          <li><strong>$0.30</strong> per dispute evaluated</li>
+        </ul>
+        <div class="includes">
+          <p><strong>Everything in Core, plus:</strong></p>
+          <ul>
+            <li>Higher rate limits</li>
+            <li>Priority support</li>
+            <li>Engine version pinning</li>
+            <li>Defined SLA response window</li>
+          </ul>
+        </div>
+        <p class="target">For: Growing marketplaces</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p class="subtitle">Embedded Core</p>
+        <div class="price">
+          <span class="amount">Custom</span>
+        </div>
+        <ul class="features">
+          <li>Volume-based pricing</li>
+          <li>Negotiated terms</li>
+        </ul>
+        <div class="includes">
+          <p><strong>Everything in Scale, plus:</strong></p>
+          <ul>
+            <li>Dedicated support</li>
+            <li>Contractual SLA</li>
+            <li>Custom rate limits</li>
+            <li>On-prem / VPC deployment option</li>
+          </ul>
+        </div>
+        <p class="target">For: High-volume integrators</p>
+      </div>
+    </div>
+
+    <h2>What's Included in All Plans</h2>
 
     <table>
       <thead>
         <tr>
           <th>Feature</th>
-          <th>All Tiers</th>
+          <th>Included</th>
         </tr>
       </thead>
       <tbody>
@@ -66,30 +138,125 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
       <li>✓ Decision engine queries</li>
     </ul>
 
-    <h2>Enterprise</h2>
+    <h2>Contract Terms</h2>
 
-    <p>For high-volume integrators, we offer:</p>
+    <p>All agreements include:</p>
 
     <ul>
-      <li>Custom rate limits</li>
-      <li>Dedicated support</li>
-      <li>SLA guarantees</li>
-      <li>On-premise deployment options</li>
+      <li>Decision output = <strong>recommendation</strong> (not enforcement)</li>
+      <li>Final enforcement = <strong>client responsibility</strong></li>
+      <li>Max liability = fees paid (capped)</li>
+      <li>No custody of funds</li>
+      <li>No custody of user data</li>
     </ul>
 
-    <p>
-      <a href="mailto:enterprise@clearhold.io">Contact enterprise sales</a>
-    </p>
+    <div class="cta-box">
+      <p><strong>Ready to integrate?</strong></p>
+      <p>
+        <a href="mailto:sales@clearhold.io">Contact Sales →</a>
+      </p>
+    </div>
   </article>
 </DocsLayout>
 
 <style>
   .doc-content {
-    max-width: 800px;
+    max-width: 900px;
   }
 
-  .status-banner {
-    background: var(--color-bg-surface);
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .pricing-card {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .pricing-card.featured {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.1);
+  }
+
+  .pricing-card h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.25rem;
+  }
+
+  .pricing-card .subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .pricing-card .price {
+    margin: 1rem 0;
+  }
+
+  .pricing-card .amount {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .pricing-card .period {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .pricing-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+
+  .pricing-card .features li {
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+  }
+
+  .pricing-card .includes {
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .pricing-card .includes p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .pricing-card .includes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pricing-card .includes li {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .pricing-card .target {
+    margin: 1rem 0 0 0;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .cta-box {
+    background: var(--color-accent-subtle);
     border: 1px solid var(--color-accent);
     border-radius: 0.5rem;
     padding: 1.5rem;
@@ -97,11 +264,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
     margin: 2rem 0;
   }
 
-  .status-banner p {
+  .cta-box p {
     margin: 0.25rem 0;
-  }
-
-  .status-banner p:first-child {
-    font-size: 1.25rem;
   }
 </style>
