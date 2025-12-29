@@ -36,8 +36,8 @@ function isActive(href: string): boolean {
             y2="329.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#3DDCF8"></stop>
-            <stop offset="1" stop-color="#8DDE23"></stop>
+            <stop stop-color="#FFFFFF"></stop>
+            <stop offset="1" stop-color="#FFFFFF"></stop>
           </linearGradient>
         </defs>
       </svg>
@@ -53,7 +53,7 @@ function isActive(href: string): boolean {
             href={item.href}
             class:list={[
               'relative text-sm font-medium transition-all duration-200',
-              isActive(item.href) ? 'text-white' : 'text-zinc-400 hover:text-white',
+              isActive(item.href) ? 'text-white!' : 'text-zinc-400! hover:text-white!',
             ]}>
             {item.label}
             {isActive(item.href) && (
@@ -75,7 +75,7 @@ function isActive(href: string): boolean {
         href="https://github.com/clearhold/engine"
         target="_blank"
         rel="noopener noreferrer"
-        class="glass rounded-full px-4 py-1.5 text-xs font-medium text-white transition-all hover:bg-white/8"
+        class="glass rounded-full px-4 py-1.5 text-xs font-medium text-white! transition-all hover:bg-white/8!"
       >
         GitHub v1.0.0
       </a>
