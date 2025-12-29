@@ -11,7 +11,7 @@ const { href, variant = 'primary', size = 'md', class: className, ...rest } = As
 
 const variants = {
   primary:
-    'bg-gradient-to-r from-indigo-500 to-purple-500 !text-white hover:from-indigo-400 hover:to-purple-400 shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30',
+    'bg-gradient-to-r from-accent to-accent-hover text-bg-base hover:from-accent-hover hover:to-accent shadow-lg shadow-accent/20 hover:shadow-accent/30',
   secondary: 'glass text-white hover:bg-white/[0.08] hover:border-white/15',
   ghost: 'text-zinc-400 hover:text-white hover:bg-white/5',
 }
@@ -23,13 +23,13 @@ const sizes = {
 }
 
 const baseStyles =
-  'inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-50 disabled:pointer-events-none cursor-pointer'
+  'inline-flex items-center justify-center gap-2 font-bold font-mono transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-50 disabled:pointer-events-none cursor-pointer'
 
 const classes = [baseStyles, variants[variant], sizes[size], className].filter(Boolean).join(' ')
 
 const Element = href ? 'a' : 'button'
 ---
 
-<Element href={href} class={classes} {...rest}>
+<Element href={href} class={classes} data-button {...rest}>
   <slot />
 </Element>

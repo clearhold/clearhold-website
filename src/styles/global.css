@@ -17,8 +17,8 @@
   --color-text-muted: #71717a;
 
   /* Accent Gradient (Indigo → Purple) */
-  --color-accent: #818cf8;
-  --color-accent-hover: #a78bfa;
+  --color-accent: #3DDCF8;
+  --color-accent-hover: #8DDE23;
   --color-accent-subtle: rgba(99, 102, 241, 0.15);
 
   --color-border: rgba(255, 255, 255, 0.06);
@@ -29,8 +29,8 @@
   --color-error: #f87171;
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', 'Fira Code', monospace;
 }
 
 /* Base Styles */
@@ -64,7 +64,7 @@ h6 {
 h1 {
   font-size: 3rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #f4f4f5 0%, #a78bfa 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #f4f4f5 0%, var(--color-accent) 50%, var(--color-accent-hover) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -90,13 +90,13 @@ p {
   margin: 1.25rem 0;
 }
 
-a {
+a:not([data-button]) {
   color: var(--color-accent);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-a:hover {
+a:not([data-button]):hover {
   color: var(--color-accent-hover);
   text-shadow: 0 0 20px rgba(129, 140, 248, 0.3);
 }
@@ -205,8 +205,9 @@ tr:hover td {
 /* Lists */
 ul,
 ol {
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
   color: var(--color-text-secondary);
+  list-style: none;
 }
 
 li {
@@ -341,7 +342,7 @@ li::marker {
 }
 
 .text-gradient-accent {
-  background: linear-gradient(135deg, #818cf8, #a78bfa, #c084fc);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover), var(--color-accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -351,6 +352,7 @@ li::marker {
   background: rgba(26, 26, 30, 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
+  border-radius: 1rem;
 }
 
 .glow-accent {

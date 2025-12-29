@@ -13,16 +13,16 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     <!-- Animated Background Orbs -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
       <div
-        class="absolute top-[-20%] left-[10%] w-150 h-150 bg-indigo-500/10 rounded-full blur-[120px] animate-float"
+        class="absolute top-[-20%] left-[10%] w-150 h-150 bg-accent/10 rounded-full blur-[120px] animate-float"
       >
       </div>
       <div
-        class="absolute top-[20%] right-[5%] w-125 h-125 bg-purple-500/10 rounded-full blur-[120px] animate-float"
+        class="absolute top-[20%] right-[5%] w-125 h-125 bg-accent/10 rounded-full blur-[120px] animate-float"
         style="animation-delay: -4s;"
       >
       </div>
       <div
-        class="absolute bottom-[-10%] left-[30%] w-100 h-100 bg-blue-500/8 rounded-full blur-[100px] animate-float"
+        class="absolute bottom-[-10%] left-[30%] w-100 h-100 bg-accent-hover/8 rounded-full blur-[100px] animate-float"
         style="animation-delay: -8s;"
       >
       </div>
@@ -38,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-medium mb-10"
       >
         <span
-          class="flex h-2 w-2 rounded-full bg-linear-to-r from-indigo-400 to-purple-400 animate-pulse"
+          class="flex h-2 w-2 rounded-full bg-linear-to-r from-accent to-accent-hover animate-pulse"
         ></span>
         <span class="text-zinc-300">v1.0.0 Public Beta</span>
       </div>
@@ -84,10 +84,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card class="animate-fade-in-up">
           <div
-            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/5"
+            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/5"
           >
             <svg
-              class="h-6 w-6 text-indigo-400"
+              class="h-6 w-6 text-accent-hover"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -109,10 +109,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
         <Card class="animate-fade-in-up animate-delay-100">
           <div
-            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/5"
+            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/5"
           >
             <svg
-              class="h-6 w-6 text-indigo-400"
+              class="h-6 w-6 text-accent-hover"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -133,10 +133,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
         <Card class="animate-fade-in-up animate-delay-200">
           <div
-            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/5"
+            class="mb-5 inline-flex h-12 w-12 items-center justify-center bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/5"
           >
             <svg
-              class="h-6 w-6 text-indigo-400"
+              class="h-6 w-6 text-accent-hover"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -169,7 +169,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <div class="flex gap-5 group">
               <div class="flex-none">
                 <div
-                  class="w-10 h-10 bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center font-mono text-sm text-indigo-400 group-hover:border-indigo-500/50 transition-colors"
+                  class="w-10 h-10 bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/10 flex items-center justify-center font-mono text-sm text-accent group-hover:border-accent/50 transition-colors"
                 >
                   01
                 </div>
@@ -184,7 +184,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <div class="flex gap-5 group">
               <div class="flex-none">
                 <div
-                  class="w-10 h-10 bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center font-mono text-sm text-indigo-400 group-hover:border-indigo-500/50 transition-colors"
+                  class="w-10 h-10 bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/10 flex items-center justify-center font-mono text-sm text-accent group-hover:border-accent/50 transition-colors"
                 >
                   02
                 </div>
@@ -199,7 +199,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <div class="flex gap-5 group">
               <div class="flex-none">
                 <div
-                  class="w-10 h-10 bg-linear-to-br from-indigo-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center font-mono text-sm text-indigo-400 group-hover:border-indigo-500/50 transition-colors"
+                  class="w-10 h-10 bg-linear-to-br from-accent/20 to-accent-hover/20 border border-white/10 flex items-center justify-center font-mono text-sm text-accent group-hover:border-accent/50 transition-colors"
                 >
                   03
                 </div>
@@ -264,9 +264,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         <!-- Core -->
-        <div class="glass p-6 animate-fade-in-up">
-          <h3 class="text-lg font-medium text-white">Core</h3>
-          <p class="text-sm text-zinc-500 mb-4">Engine</p>
+        <div class="glass py-12 px-8 animate-fade-in-up">
+          <h3 class="m-0! text-lg font-medium text-white">Core</h3>
+          <p class="text-sm text-zinc-600! mt-1! mb-4">Engine</p>
           <div class="mb-4">
             <span class="text-3xl font-semibold text-white">$99</span>
             <span class="text-zinc-500">/month</span>
@@ -280,16 +280,15 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         </div>
 
         <!-- Scale (Featured) -->
-        <div
-          class="glass p-6 border-indigo-500/50 glow-accent animate-fade-in-up animate-delay-100"
-        >
+        <div class="relative glass py-12 px-8 animate-fade-in-up border-accent-hover!">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="text-lg font-medium text-white">Scale</h3>
-            <span class="text-xs bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded-full"
+            <h3 class="m-0! text-lg font-medium text-white">Scale</h3>
+            <span
+              class="absolute -top-3 left-1/2 -translate-x-1/2 text-sm bg-accent-hover text-bg-base px-2 py-0.5 rounded-full"
               >Popular</span
             >
           </div>
-          <p class="text-sm text-zinc-500 mb-4">Infra Partner</p>
+          <p class="text-sm text-zinc-600! mt-1! mb-4">Infra Partner</p>
           <div class="mb-4">
             <span class="text-3xl font-semibold text-white">$499</span>
             <span class="text-zinc-500">/month</span>
@@ -303,9 +302,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         </div>
 
         <!-- Enterprise -->
-        <div class="glass p-6 animate-fade-in-up animate-delay-200">
-          <h3 class="text-lg font-medium text-white">Enterprise</h3>
-          <p class="text-sm text-zinc-500 mb-4">Embedded Core</p>
+        <div class="glass py-12 px-8 animate-fade-in-up animate-delay-200">
+          <h3 class="m-0! text-lg font-medium text-white">Enterprise</h3>
+          <p class="text-sm text-zinc-600! mt-1! mb-4">Embedded Core</p>
           <div class="mb-4">
             <span class="text-3xl font-semibold text-white">Custom</span>
           </div>
