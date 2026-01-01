@@ -27,72 +27,52 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
     <h2>Plans</h2>
 
     <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Core</h3>
-        <p class="subtitle">Engine</p>
+      <div class="pricing-card featured">
+        <h3>Standard</h3>
+        <p class="subtitle">Pay-as-you-go</p>
         <div class="price">
-          <span class="amount">$99</span>
-          <span class="period">/month</span>
+          <span class="amount">4.5%</span>
+          <span class="plus">+</span>
+          <span class="amount">$0.45</span>
+          <span class="period">/per execution</span>
         </div>
         <ul class="features">
-          <li><strong>+0.5%</strong> of escrow volume</li>
-          <li><strong>$0.50</strong> per dispute evaluated</li>
+          <li><strong>Full</strong> lifecycle orchestration</li>
+          <li><strong>Dispute-aware</strong> decision engine</li>
+          <li><strong>HMAC</strong> security & replay protection</li>
         </ul>
         <div class="includes">
           <p><strong>Includes:</strong></p>
           <ul>
-            <li>Full escrow orchestration</li>
-            <li>Decision engine access</li>
-            <li>Audit logs</li>
-            <li>Best-effort support</li>
+            <li>API-first integration</li>
+            <li>Unlimited webhooks</li>
+            <li>Comprehensive audit logs</li>
+            <li>Developer support</li>
           </ul>
         </div>
-        <p class="target">For: Vertical SaaS, Agency platforms</p>
-      </div>
-
-      <div class="pricing-card featured">
-        <h3>Scale</h3>
-        <p class="subtitle">Infra Partner</p>
-        <div class="price">
-          <span class="amount">$499</span>
-          <span class="period">/month</span>
-        </div>
-        <ul class="features">
-          <li><strong>+0.3%</strong> of escrow volume</li>
-          <li><strong>$0.30</strong> per dispute evaluated</li>
-        </ul>
-        <div class="includes">
-          <p><strong>Everything in Core, plus:</strong></p>
-          <ul>
-            <li>Higher rate limits</li>
-            <li>Priority support</li>
-            <li>Engine version pinning</li>
-            <li>Defined SLA response window</li>
-          </ul>
-        </div>
-        <p class="target">For: Growing marketplaces</p>
+        <p class="target">For: Vertical SaaS, Marketplace Platforms</p>
       </div>
 
       <div class="pricing-card">
         <h3>Enterprise</h3>
         <p class="subtitle">Embedded Core</p>
         <div class="price">
-          <span class="amount">Custom</span>
+          <span class="amount">Volume-based</span>
         </div>
         <ul class="features">
-          <li>Volume-based pricing</li>
-          <li>Negotiated terms</li>
+          <li>Negotiated pricing</li>
+          <li>Custom contractual terms</li>
         </ul>
         <div class="includes">
-          <p><strong>Everything in Scale, plus:</strong></p>
+          <p><strong>Everything in Standard, plus:</strong></p>
           <ul>
-            <li>Dedicated support</li>
-            <li>Contractual SLA</li>
-            <li>Custom rate limits</li>
-            <li>On-prem / VPC deployment option</li>
+            <li>Priority Support & SLA</li>
+            <li>Dedicated Technical Manager</li>
+            <li>On-prem / VPC deployment</li>
+            <li>Advanced compliance auditing</li>
           </ul>
         </div>
-        <p class="target">For: High-volume integrators</p>
+        <p class="target">For: High-volume enterprise integrators</p>
       </div>
     </div>
 
@@ -132,10 +112,14 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
     <h2>What We Don't Charge For</h2>
 
     <ul>
-      <li>✓ API calls (no per-request fees)</li>
-      <li>✓ Webhook deliveries</li>
-      <li>✓ Storage (we only store references)</li>
+      <li>✓ API calls (No per-request fees)</li>
+      <li>✓ Webhook deliveries & retries</li>
+      <li>✓ Metadata storage</li>
       <li>✓ Decision engine queries</li>
+      <li>
+        <strong class="text-accent">✓ Outcome-based fees</strong> (We charge for the decision, not the
+        result)
+      </li>
     </ul>
 
     <h2>Contract Terms</h2>
@@ -194,18 +178,30 @@ import DocsLayout from '../../layouts/DocsLayout.astro'
   }
 
   .pricing-card .price {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
   }
 
   .pricing-card .amount {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.25rem;
+    font-weight: 700;
     color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .pricing-card .plus {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin: 0 0.1rem;
   }
 
   .pricing-card .period {
     color: var(--color-text-muted);
     font-size: 0.875rem;
+    margin-left: 0.25rem;
   }
 
   .pricing-card .features {
