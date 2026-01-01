@@ -1,0 +1,134 @@
+---
+
+---
+
+<div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 select-none">
+  <svg
+    class="w-full h-full"
+    viewBox="0 0 1440 800"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+      </filter>
+
+      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0"></stop>
+        <stop offset="50%" stop-color="var(--color-accent)" stop-opacity="0.2"></stop>
+        <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+
+    <!-- Background Grid lines -->
+    <g class="circuit-lines stroke-white/5" stroke-width="1" stroke-dasharray="4 4">
+      <path d="M-100 200 H1600"></path>
+      <path d="M-100 400 H1600"></path>
+      <path d="M-100 600 H1600"></path>
+      <path d="M400 -100 V900"></path>
+      <path d="M800 -100 V900"></path>
+      <path d="M1200 -100 V900"></path>
+    </g>
+
+    <!-- Main Escrow Paths -->
+    <g class="flow-paths" stroke="url(#lineGrad)" stroke-width="2">
+      <!-- Path 1: Creation -> Delivery -> Decision -->
+      <path
+        id="path1"
+        d="M100 300 H400 Q450 300 450 350 V450 Q450 500 500 500 H900 Q950 500 950 450 V200 Q950 150 1000 150 H1300"
+      ></path>
+
+      <!-- Path 2: Alternate dispute path -->
+      <path
+        id="path2"
+        d="M200 600 H600 Q650 600 650 550 V400 Q650 350 700 350 H1100 Q1150 350 1150 400 V600 H1400"
+      ></path>
+
+      <!-- Path 3: Direct API calls -->
+      <path id="path3" d="M0 100 H1440"></path>
+    </g>
+
+    <!-- Moving Particles -->
+    <circle r="3" fill="var(--color-accent)" filter="url(#glow)">
+      <animateMotion
+        dur="8s"
+        repeatCount="indefinite"
+        path="M100 300 H400 Q450 300 450 350 V450 Q450 500 500 500 H900 Q950 500 950 450 V200 Q950 150 1000 150 H1300"
+      ></animateMotion>
+    </circle>
+
+    <circle r="2" fill="var(--color-accent-hover)" filter="url(#glow)">
+      <animateMotion
+        dur="12s"
+        begin="-4s"
+        repeatCount="indefinite"
+        path="M200 600 H600 Q650 600 650 550 V400 Q650 350 700 350 H1100 Q1150 350 1150 400 V600 H1400"
+      ></animateMotion>
+    </circle>
+
+    <circle r="2" fill="white" filter="url(#glow)" opacity="0.5">
+      <animateMotion dur="6s" begin="-2s" repeatCount="indefinite" path="M0 100 H1440"
+      ></animateMotion>
+    </circle>
+
+    <!-- Decision Nodes -->
+    <g class="nodes">
+      <!-- Node 1 -->
+      <circle cx="450" cy="350" r="4" class="node-pulse success"></circle>
+      <circle cx="950" cy="450" r="4" class="node-pulse warning" style="animation-delay: 2s;"
+      ></circle>
+      <circle cx="700" cy="350" r="4" class="node-pulse info" style="animation-delay: 1s;"></circle>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .node-pulse {
+    fill: transparent;
+    stroke-width: 2;
+    animation: node-ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .node-pulse.success {
+    stroke: var(--color-accent);
+  }
+  .node-pulse.warning {
+    stroke: #fbbf24;
+  } /* Amber-400 */
+  .node-pulse.info {
+    stroke: #60a5fa;
+  } /* Blue-400 */
+
+  @keyframes node-ping {
+    0% {
+      r: 2;
+      stroke-opacity: 1;
+      fill: currentColor;
+      fill-opacity: 0.5;
+    }
+    75%,
+    100% {
+      r: 15;
+      stroke-opacity: 0;
+      fill-opacity: 0;
+    }
+  }
+
+  /* Extra subtle drift for the whole group */
+  .flow-paths,
+  .nodes {
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(10px, 10px);
+    }
+  }
+</style>

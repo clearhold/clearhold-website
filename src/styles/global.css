@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ============================================================================
    Clearhold Docs — Premium Design System
@@ -17,8 +17,8 @@
   --color-text-muted: #71717a;
 
   /* Accent Gradient (Indigo → Purple) */
-  --color-accent: #3DDCF8;
-  --color-accent-hover: #8DDE23;
+  --color-accent: #3ddcf8;
+  --color-accent-hover: #8dde23;
   --color-accent-subtle: rgba(99, 102, 241, 0.15);
 
   --color-border: rgba(255, 255, 255, 0.06);
@@ -64,7 +64,12 @@ h6 {
 h1 {
   font-size: 3rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #f4f4f5 0%, var(--color-accent) 50%, var(--color-accent-hover) 100%);
+  background: linear-gradient(
+    135deg,
+    #f4f4f5 0%,
+    var(--color-accent) 50%,
+    var(--color-accent-hover) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -112,11 +117,10 @@ code {
   background: linear-gradient(145deg, #131316 0%, #1a1a1e 100%);
   border: 1px solid var(--color-border);
   padding: 1.5rem;
+  margin-top: 1rem;
   overflow-x: auto;
   font-size: 0.875rem;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   position: relative;
 }
 
@@ -127,8 +131,8 @@ code {
   top: 0;
   left: 0;
   right: 0;
-  height: 2.5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+  height: 1rem;
+  background: #1a1a1e;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -142,7 +146,7 @@ code {
 }
 
 /* Inline code */
-.prose :not(pre)>code {
+.prose :not(pre) > code {
   background: var(--color-accent-subtle);
   color: #c4b5fd;
   padding: 0.2rem 0.5rem;
@@ -252,7 +256,6 @@ li::marker {
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     box-shadow: 0 0 20px rgba(129, 140, 248, 0.3);
@@ -264,7 +267,6 @@ li::marker {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -327,8 +329,7 @@ li::marker {
 
 .bg-grid-soft {
   background-size: 50px 50px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
@@ -338,11 +339,20 @@ li::marker {
 }
 
 .bg-gradient-radial {
-  background: radial-gradient(ellipse at center, var(--color-bg-elevated) 0%, var(--color-bg-base) 70%);
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-bg-elevated) 0%,
+    var(--color-bg-base) 70%
+  );
 }
 
 .text-gradient-accent {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover), var(--color-accent));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-hover),
+    var(--color-accent)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
